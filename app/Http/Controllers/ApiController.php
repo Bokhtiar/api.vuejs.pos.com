@@ -61,7 +61,13 @@ class ApiController extends Controller
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $token = auth()->user()->createToken('TutsForWeb')->accessToken;
-            return response()->json(['token' => $token], 200);
+            // return response()->json(['token' => $token], 200);
+            return response()->json(array(
+                'token' => $token,
+                'user_id' => Auth::id(),
+            ), 200);
+
+
         } else {
             return response()->json(['error' => 'UnAuthorised'], 401);
         }
