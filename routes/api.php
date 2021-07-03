@@ -43,3 +43,10 @@ Route::get('/product/category/{id}', [App\Http\Controllers\ProductController::cl
 Route::post('/add-to-cart', [App\Http\Controllers\CartController::class, 'store']);
 Route::get('/all-cart/{id}', [App\Http\Controllers\CartController::class, 'index']);
 Route::get('/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
+
+
+Route::get('/customer/index', [App\Http\Controllers\CustomerController::class, 'index']);
+Route::post('/customer/store', [App\Http\Controllers\CustomerController::class, 'store']);
+Route::get('/edit/customer/{id}', [App\Http\Controllers\CustomerController::class, 'edit']);
+Route::post('/customer/update/{id}', [App\Http\Controllers\CustomerController::class, 'update']);
+Route::get('/customer/delete/{id}', [App\Http\Controllers\CustomerController::class, 'destroy']);
