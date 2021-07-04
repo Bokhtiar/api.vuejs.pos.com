@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
 
+    public function index(){
+      $orders = Order::with('customer')->get();
+      return response()->json($orders, 200);
+    }
 
     public function store(Request $request)
     {
@@ -36,9 +40,10 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function detail($id)
     {
-        //
+        $order = Cart::with('product')->where('order_id', $id)->get();
+        return response()->json($order, 200);
     }
 
     /**

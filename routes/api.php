@@ -52,4 +52,6 @@ Route::post('/customer/update/{id}', [App\Http\Controllers\CustomerController::c
 Route::get('/customer/delete/{id}', [App\Http\Controllers\CustomerController::class, 'destroy']);
 
 
+Route::get('/order/index/', [App\Http\Controllers\OrderController::class, 'index']);
 Route::post('/order', [App\Http\Controllers\OrderController::class, 'store']);
+Route::get('/order/detail/{id}', [App\Http\Controllers\OrderController::class, 'detail']);
