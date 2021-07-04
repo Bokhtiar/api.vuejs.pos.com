@@ -50,3 +50,6 @@ Route::post('/customer/store', [App\Http\Controllers\CustomerController::class, 
 Route::get('/edit/customer/{id}', [App\Http\Controllers\CustomerController::class, 'edit']);
 Route::post('/customer/update/{id}', [App\Http\Controllers\CustomerController::class, 'update']);
 Route::get('/customer/delete/{id}', [App\Http\Controllers\CustomerController::class, 'destroy']);
+
+
+Route::post('/order', [App\Http\Controllers\OrderController::class, 'store']);
