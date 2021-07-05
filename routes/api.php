@@ -34,6 +34,7 @@ Route::get('/category/delete/{id}', [App\Http\Controllers\CategoryController::cl
 Route::get('/product/index', [App\Http\Controllers\ProductController::class, 'index']);
 Route::post('/product/store', [App\Http\Controllers\ProductController::class, 'store']);
 Route::get('/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit']);
+Route::get('/product/detail/{id}', [App\Http\Controllers\ProductController::class, 'show']);
 Route::post('/product/update/{id}', [App\Http\Controllers\ProductController::class, 'update']);
 Route::get('/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete']);
 

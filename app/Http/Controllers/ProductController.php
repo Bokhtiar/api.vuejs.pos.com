@@ -99,6 +99,11 @@ class ProductController extends Controller
       return response()->json($product, 200);
     }
 
+    public function show($id){
+      $product = Product::where('id', $id)->with('category')->first();
+      return response()->json($product, 200);
+    }
+
 
     public function delete($id){
       $delete = Product::find($id)->delete();
