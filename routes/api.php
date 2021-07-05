@@ -30,6 +30,12 @@ Route::post('/category/update/{id}', [App\Http\Controllers\CategoryController::c
 Route::get('/category/delete/{id}', [App\Http\Controllers\CategoryController::class, 'delete']);
 
 
+Route::post('/brand/store', [App\Http\Controllers\BrandController::class, 'store']);
+Route::get('/brand/index', [App\Http\Controllers\BrandController::class, 'index']);
+Route::get('/brand/edit/{id}', [App\Http\Controllers\BrandController::class, 'edit']);
+Route::post('/brand/update/{id}', [App\Http\Controllers\BrandController::class, 'update']);
+Route::get('/brand/delete/{id}', [App\Http\Controllers\BrandController::class, 'destroy']);
+
 
 Route::get('/product/index', [App\Http\Controllers\ProductController::class, 'index']);
 Route::post('/product/store', [App\Http\Controllers\ProductController::class, 'store']);
