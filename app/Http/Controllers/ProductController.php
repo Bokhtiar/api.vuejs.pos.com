@@ -18,9 +18,21 @@ class ProductController extends Controller
     {
       $product = new Product;
       $product->title = $request->title;
+      $product->product_code = $request->product_code;
+      $product->product_quantity = $request->product_quantity;
       $product->category_id = $request->category_id;
       $product->brand_id = $request->brand_id;
+      $product->product_unit = $request->product_unit;
+      $product->product_sell_unit = $request->product_sell_unit;
+      $product->product_purchase_unit = $request->product_purchase_unit;
+      $product->product_cost_price = $request->product_cost_price;
       $product->price = $request->price;
+      $product->pos_display = $request->pos_display;
+      $product->description = $request->description;
+      $product->product_promotion = $request->product_promotion;
+      $product->promotional_price = $request->promotional_price;
+      $product->promotion_start_date = $request->promotion_start_date;
+      $product->promotion_end_date = $request->promotion_end_date;
 
         $image=$request->file('image');
              if ($image){
@@ -87,7 +99,7 @@ class ProductController extends Controller
       return response()->json($product, 200);
     }
 
-    
+
     public function delete($id){
       $delete = Product::find($id)->delete();
       return response()->json($delete, 200);
