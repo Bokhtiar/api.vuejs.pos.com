@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('product_quantity');
             $table->integer('category_id');
             $table->string('brand_id')->nullable();
+            $table->string('company_id')->nullable();
             $table->string('product_unit');
             $table->string('product_sell_unit');
             $table->string('product_purchase_unit');

@@ -42,6 +42,8 @@ Route::get('/company/index', [App\Http\Controllers\CompanyController::class, 'in
 Route::get('/company/edit/{id}', [App\Http\Controllers\CompanyController::class, 'edit']);
 Route::post('/company/update/{id}', [App\Http\Controllers\CompanyController::class, 'update']);
 Route::get('/company/delete/{id}', [App\Http\Controllers\CompanyController::class, 'destroy']);
+Route::get('/brand/show/{id}', [App\Http\Controllers\ProductController::class, 'company_ways_show']);
+
 
 Route::get('/product/index', [App\Http\Controllers\ProductController::class, 'index']);
 Route::post('/product/store', [App\Http\Controllers\ProductController::class, 'store']);

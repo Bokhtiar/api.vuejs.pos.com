@@ -22,6 +22,7 @@ class ProductController extends Controller
       $product->product_quantity = $request->product_quantity;
       $product->category_id = $request->category_id;
       $product->brand_id = $request->brand_id;
+      $product->company_id = $request->company_id;
       $product->product_unit = $request->product_unit;
       $product->product_sell_unit = $request->product_sell_unit;
       $product->product_purchase_unit = $request->product_purchase_unit;
@@ -100,7 +101,12 @@ class ProductController extends Controller
     }
 
     public function show($id){
-      $product = Product::where('id', $id)->with('category')->first();
+      $product = Product::where('id', $id)->with('category', 'brand', 'company')->first();
+      return response()->json($product, 200);
+    }
+
+    public function company_ways_show($id){
+      $product = Product::with('category')->where('company_id', $id)->get();
       return response()->json($product, 200);
     }
 
