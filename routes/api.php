@@ -37,6 +37,12 @@ Route::post('/brand/update/{id}', [App\Http\Controllers\BrandController::class, 
 Route::get('/brand/delete/{id}', [App\Http\Controllers\BrandController::class, 'destroy']);
 
 
+Route::post('/company/store', [App\Http\Controllers\CompanyController::class, 'store']);
+Route::get('/company/index', [App\Http\Controllers\CompanyController::class, 'index']);
+Route::get('/company/edit/{id}', [App\Http\Controllers\CompanyController::class, 'edit']);
+Route::post('/company/update/{id}', [App\Http\Controllers\CompanyController::class, 'update']);
+Route::get('/company/delete/{id}', [App\Http\Controllers\CompanyController::class, 'destroy']);
+
 Route::get('/product/index', [App\Http\Controllers\ProductController::class, 'index']);
 Route::post('/product/store', [App\Http\Controllers\ProductController::class, 'store']);
 Route::get('/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit']);
