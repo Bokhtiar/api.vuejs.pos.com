@@ -8,7 +8,7 @@ use App\Models\Cart;
 class CartController extends Controller
 {
   public function index($id){
-    $carts = Cart::where('user_id', $id)->where('order_id', null)->with('product')->get();
+    $carts = Cart::with('product')->where('user_id', $id)->where('order_id', null)->get();
     return response()->json($carts, 200);
   }
     public function store(Request $request){
@@ -21,6 +21,13 @@ class CartController extends Controller
 
     public function delete($id){
       $cart = Cart::find($id)->delete();
+      return response()->json($cart, 200);
+    }
+
+    public function update(Request $request, $id){
+      $cart = Cart::find($id);
+      $cart->quantity = $request->quantity;
+      $cart->save();
       return response()->json($cart, 200);
     }
 }

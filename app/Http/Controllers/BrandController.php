@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -48,9 +49,10 @@ class BrandController extends Controller
      * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function show(Brand $brand)
+    public function brand_ways_product($id)
     {
-        //
+        $brand = Product::where('brand_id', $id)->get();
+        return response()->json($brand, 200);
     }
 
     /**

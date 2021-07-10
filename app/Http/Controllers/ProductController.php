@@ -88,7 +88,7 @@ class ProductController extends Controller
 
     public function search($text){
       $text = $text;
-      $product = Product::select("title")
+      $product = Product::with('category', 'brand', 'company')->select("title", "id")
            ->where("title", "LIKE", "%{$text}%")
            ->get();
 

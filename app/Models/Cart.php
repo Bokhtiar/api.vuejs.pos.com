@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
-
+ 
 
 class Cart extends Model
 {
@@ -18,5 +18,5 @@ class Cart extends Model
       return $this->belongsTo(Product::class);
     }
 
-          
+
 }

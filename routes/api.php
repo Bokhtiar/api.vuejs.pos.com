@@ -35,6 +35,7 @@ Route::get('/brand/index', [App\Http\Controllers\BrandController::class, 'index'
 Route::get('/brand/edit/{id}', [App\Http\Controllers\BrandController::class, 'edit']);
 Route::post('/brand/update/{id}', [App\Http\Controllers\BrandController::class, 'update']);
 Route::get('/brand/delete/{id}', [App\Http\Controllers\BrandController::class, 'destroy']);
+Route::get('/brand/ways/product/{id}', [App\Http\Controllers\BrandController::class, 'brand_ways_product']);
 
 
 Route::post('/company/store', [App\Http\Controllers\CompanyController::class, 'store']);
@@ -53,9 +54,11 @@ Route::post('/product/update/{id}', [App\Http\Controllers\ProductController::cla
 Route::get('/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete']);
 
 Route::get('/product/search/{text}', [App\Http\Controllers\ProductController::class, 'search']);
-Route::get('/product/category/{id}', [App\Http\Controllers\ProductController::class, 'category_ways_show']);
+Route::get('/product/category/', [App\Http\Controllers\ProductController::class, 'category_ways_show']);
 
 Route::post('/add-to-cart', [App\Http\Controllers\CartController::class, 'store']);
+Route::post('/quantity/update/{id}', [App\Http\Controllers\CartController::class, 'update']);
+
 Route::get('/all-cart/{id}', [App\Http\Controllers\CartController::class, 'index']);
 Route::get('/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
 
