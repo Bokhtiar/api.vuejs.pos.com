@@ -73,3 +73,4 @@ Route::get('/customer/delete/{id}', [App\Http\Controllers\CustomerController::cl
 Route::get('/order/index/', [App\Http\Controllers\OrderController::class, 'index']);
 Route::post('/order', [App\Http\Controllers\OrderController::class, 'store']);
 Route::get('/order/detail/{id}', [App\Http\Controllers\OrderController::class, 'detail']);
+Route::get('/order/delete/{id}', [App\Http\Controllers\OrderController::class, 'delete']);
